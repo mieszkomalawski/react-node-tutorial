@@ -51,11 +51,17 @@ class Content extends React.Component {
     }
 }
 
+// defaults
 App.defaultProps = {
     headerProp: "Header from props default...",
     contentProp: "dupa"
 }
 
+//validation
+App.propTypes = {
+    headerProp: React.PropTypes.string,
+    contentProp: React.PropTypes.string
+}
 
 
 export default App;
