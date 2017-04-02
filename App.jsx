@@ -2,9 +2,6 @@ import React from 'react';
 
 class App extends React.Component {
     render() {
-
-
-
         return (
             <div>
                 <Header/>
@@ -23,12 +20,12 @@ class Header extends React.Component {
             color: '#FF0000'
         };
 
-       return (
-           <div>
-               <h1 style={myStyle}>Hello</h1>
-               <h1>Javscript example {1 == 1 ? 'True' : 'False'}</h1>
-           </div>
-       )
+        return (
+            <div>
+                <h1 style={myStyle}>Hello</h1>
+                <h1>Javscript example {1 == 1 ? 'True' : 'False'}</h1>
+            </div>
+        )
     }
 }
 
