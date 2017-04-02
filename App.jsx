@@ -6,7 +6,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            data: 0
+            data: "Inital data ..."
         }
 
         this.updateState = this.updateState.bind(this)
@@ -17,11 +17,17 @@ class App extends React.Component {
     }
 
     render() {
+       return <Content myDataProp = {this.state.data} updateStateProp = {this.updateState} />
+    }
+}
+
+class Content extends React.Component {
+    render() {
         return (
             <div>
-                <input type = "text" value = {this.state.data}
-                       onChange = {this.updateState} />
-                <h4>{this.state.data}</h4>
+                <input type = "text" value = {this.props.myDataProp}
+                       onChange = {this.props.updateStateProp} />
+                <h4>{this.props.myDataProp}</h4>
             </div>
         );
     }
