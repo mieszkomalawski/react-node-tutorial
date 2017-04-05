@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router';
-import { Router, Route } from 'react-router';
-import {App, Home, Contact, About} from './App.jsx';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+// Import routing components
+import {Router, Route} from 'react-router';
+import createBrowserHistory from 'history/createBrowserHistory';
+const newHistory = createBrowserHistory();
 
-ReactDOM.render((
-    <Router history = {browserHistory}>
-        <Route path = "/" component = {App}>
-            <IndexRoute component = {Home} />
-            <Route path = "home" component = {Home} />
-            <Route path = "about" component = {About} />
-            <Route path = "contact" component = {Contact} />
-        </Route>
-    </Router>
+class Home extends Component {
+    render(){
+        return (<h1>Hi</h1>);
+    }
+}
 
-), document.getElementById('app'))
+class Dupa extends Component {
+    render(){
+        return (<h1>Dupa</h1>);
+    }
+}
+
+render(
+    <Router  history={newHistory}>
+        <div>
+            <Route path="/" component={Home}/>
+            <Route path="/dupa" component={Dupa}/>
+        </div>
+
+    </Router>,
+    document.getElementById('app')
+);
